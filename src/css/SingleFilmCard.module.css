@@ -3,6 +3,7 @@
 }
 .image {
     overflow: hidden;
+    cursor: pointer;
 }
 .image img {
     transition: all 0.3s;

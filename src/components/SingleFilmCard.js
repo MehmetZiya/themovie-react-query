@@ -1,10 +1,17 @@
 import classes from '../css/SingleFilmCard.module.css';
 
+import { useHistory } from 'react-router-dom';
+
 const SingleFilmCard = ({movie}) => {
     const baseImgURL = 'https://image.tmdb.org/t/p/w200' ;
+    const history = useHistory();
+    
+    const goDetailsPage = () =>{
+        history.push(`/movies/${movie.id}`)
+    }
     return ( 
         <div className={classes.card} >
-            <figure className={classes.image}>
+            <figure className={classes.image} onClick ={goDetailsPage}>
                 <img src={`${baseImgURL}${movie.poster_path}`} alt={ movie.title} />
             </figure>
             <div className={classes.movieInfo}>

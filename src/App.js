@@ -1,12 +1,13 @@
 
 import { Route, Switch} from "react-router-dom";
+import { Redirect } from "react-router";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/Layout";
 import PopularFilms from "./pages/PopularFilms";
 import NowPlaying from "./pages/NowPlaying";
 import TopList from "./pages/TopList";
 import NotFound from "./pages/NotFound";
-import { Redirect } from "react-router";
+import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/top_rated" exact>
             <TopList />
+          </Route>
+          <Route path="/movies/:id" >
+            <MovieDetails />
           </Route>
           <Route path="*" exact>
             <NotFound />
