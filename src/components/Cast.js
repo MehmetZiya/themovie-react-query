@@ -1,0 +1,27 @@
+import { Link } from "react-router-dom";
+import classes from "../css/Cast.module.css";
+
+const Cast = ({ actor }) => {
+  const baseImgURL = "https://image.tmdb.org/t/p/w200";
+  return (
+    <div className={classes.cast}>
+      <Link to={`/actors/${actor.id}`} key={actor.id}>
+        {actor.profile_path ? (
+          <figure>
+            <img src={`${baseImgURL}${actor.profile_path}`} alt={actor.name} />
+          </figure>
+        ) : (
+          <figure>
+            <img
+              src="https://via.placeholder.com/200x300?text=No+image+found"
+              alt={actor.name}
+            />
+          </figure>
+        )}
+        {actor.name}
+      </Link>
+    </div>
+  );
+};
+
+export default Cast;

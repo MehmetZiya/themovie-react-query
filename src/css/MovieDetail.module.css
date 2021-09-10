@@ -1,0 +1,4 @@
+.castWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}

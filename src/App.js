@@ -8,6 +8,7 @@ import NowPlaying from "./pages/NowPlaying";
 import TopList from "./pages/TopList";
 import NotFound from "./pages/NotFound";
 import MovieDetails from "./pages/MovieDetails";
+import ActorsDetails from "./pages/ActorsDetails";
 
 function App() {
   return (
@@ -29,8 +30,11 @@ function App() {
           <Route path="/top_rated" exact>
             <TopList />
           </Route>
-          <Route path="/movies/:id" >
+          <Route path="/movies/:movieId" >
             <MovieDetails />
+          </Route>
+          <Route path="/actors/:actorId" >
+            <ActorsDetails />
           </Route>
           <Route path="*" exact>
             <NotFound />

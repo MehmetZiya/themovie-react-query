@@ -27,10 +27,15 @@ export const fetchGenres = async () => {
   return res.json();
 };
 
-export const fetchMovieDetails = async ( id ) => {
+export const fetchMovieDetails = async (movieId) => {
   const res = await fetch(`
-        ${baseURL}movie/${id}?api_key=${api_key}&append_to_response=credits`);
+        ${baseURL}movie/${movieId}?api_key=${api_key}&append_to_response=credits`);
   return res.json();
 };
 
-
+export const fetchMoviesByActor = async (actorId) => {
+  const res = await fetch(
+    `${baseURL}person/${actorId}?api_key=${api_key}&language=${lang}&append_to_response=credits`
+  );
+  return res.json();
+};

@@ -1,0 +1,10 @@
+.cast {
+    display: flex;
+    
+    justify-content: center;
+    text-align: center;
+    
+}
+.cast a{
+    text-decoration: none;
+}

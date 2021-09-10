@@ -1,0 +1,4 @@
+.moviesByActor {
+    display: flex;
+    flex-wrap: wrap;
+}

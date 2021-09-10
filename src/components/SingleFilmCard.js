@@ -3,7 +3,7 @@ import classes from '../css/SingleFilmCard.module.css';
 import { useHistory } from 'react-router-dom';
 
 const SingleFilmCard = ({movie}) => {
-    const baseImgURL = 'https://image.tmdb.org/t/p/w200' ;
+    const baseImgURL = 'https://image.tmdb.org/t/p/w400' ;
     const history = useHistory();
     
     const goDetailsPage = () =>{
@@ -11,9 +11,12 @@ const SingleFilmCard = ({movie}) => {
     }
     return ( 
         <div className={classes.card} >
-            <figure className={classes.image} onClick ={goDetailsPage}>
+            { movie.poster_path ? <figure className={classes.image} onClick ={goDetailsPage}>
                 <img src={`${baseImgURL}${movie.poster_path}`} alt={ movie.title} />
-            </figure>
+            </figure> : <figure className={classes.image} onClick ={goDetailsPage}>
+                <img src="https://via.placeholder.com/200x300?text=No+poster+found" alt={ movie.title} />
+            </figure> }
+            
             <div className={classes.movieInfo}>
                 <h4>{ movie.title}</h4>
                 <p><b>Popularity:</b> { movie.popularity}</p>
