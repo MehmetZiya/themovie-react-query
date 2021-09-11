@@ -11,16 +11,16 @@ const SingleFilmCard = ({movie}) => {
     }
     return ( 
         <div className={classes.card} >
-            { movie.poster_path ? <figure className={classes.image} onClick ={goDetailsPage}>
+            { movie.poster_path ? <div className={classes.image} onClick ={goDetailsPage}>
                 <img src={`${baseImgURL}${movie.poster_path}`} alt={ movie.title} />
-            </figure> : <figure className={classes.image} onClick ={goDetailsPage}>
+            </div> : <div className={classes.image} onClick ={goDetailsPage}>
                 <img src="https://via.placeholder.com/200x300?text=No+poster+found" alt={ movie.title} />
-            </figure> }
+            </div> }
             
             <div className={classes.movieInfo}>
                 <h4>{ movie.title}</h4>
-                <p><b>Popularity:</b> { movie.popularity}</p>
-                <p><b>Average Rate:</b> { movie.vote_average}</p>
+                <p><i>Popularity:</i> { movie.popularity}</p>
+                <p><i>Average Rate:</i> { movie.vote_average}</p>
             </div>
         </div>
      );

@@ -7,16 +7,16 @@ const Cast = ({ actor }) => {
     <div className={classes.cast}>
       <Link to={`/actors/${actor.id}`} key={actor.id}>
         {actor.profile_path ? (
-          <figure>
+          <div className ={ classes.actorImg}>
             <img src={`${baseImgURL}${actor.profile_path}`} alt={actor.name} />
-          </figure>
+          </div>
         ) : (
-          <figure>
+          <div className ={ classes.actorImg}>
             <img
               src="https://via.placeholder.com/200x300?text=No+image+found"
               alt={actor.name}
             />
-          </figure>
+          </div>
         )}
         {actor.name}
       </Link>

@@ -47,4 +47,5 @@ body {
 .movieCard-Box {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }

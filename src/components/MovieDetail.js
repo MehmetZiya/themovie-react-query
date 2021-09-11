@@ -29,7 +29,7 @@ const Details = ({ data }) => {
       </div>
       <div className ={classes.castWrapper}>
         {cast.map((actor) => (
-          <Cast actor={actor} />
+          <Cast key={actor.id} actor={actor} />
         ))}
       </div>
       {cast && cast.length < data.credits.cast.length && (

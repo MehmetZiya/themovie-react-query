@@ -1,0 +1,19 @@
+.options {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 1rem;
+}
+
+select {
+    width: 70%;
+    border: 2px solid blue;
+    border-radius: 4px;
+    background-color: rgb(4, 54, 23);
+    color: white;
+    padding: 0.5rem auto;
+    text-align: center;
+    font-size: large;
+}
+.inputHeader {
+    text-align: center;
+}

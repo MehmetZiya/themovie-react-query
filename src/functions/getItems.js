@@ -23,7 +23,7 @@ export const fetchNowPlaying = async (page) => {
 
 export const fetchGenres = async () => {
   const res = await fetch(`
-        ${baseURL}genres/movie/list?api_key=${api_key}&language=${lang}`);
+        ${baseURL}genre/movie/list?api_key=${api_key}&language=${lang}`);
   return res.json();
 };
 
@@ -39,3 +39,11 @@ export const fetchMoviesByActor = async (actorId) => {
   );
   return res.json();
 };
+
+export const fetchMoviesByGenre = async (genreId, page) => {
+  const res = await fetch(
+    `${baseURL}discover/movie?api_key=${api_key}&language=${lang}&with_genres=${genreId}&page=${page}`
+  );
+  return res.json();
+};
+

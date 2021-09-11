@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { useQuery } from "react-query";
 import SingleFilmCard from "../components/SingleFilmCard";
 import PaginationButtons from "../components/PaginationButtons";
 import { fetchNowPlaying } from "../functions/getItems";
-
-
+import { useUrlSearchParams } from "use-url-search-params";
 
 const NowPlaying = () => {
-  const [page, setPage] = useState(1);
+  const [pageParams, setPageParams] = useUrlSearchParams(
+    { page: 1 },
+    { page: Number }
+  );
+  const [page, setPage] = useState(pageParams.page);
+  
   const {
     isLoading,
     isError,
@@ -19,6 +23,9 @@ const NowPlaying = () => {
     keepPreviousData: true,
   });
   
+  useEffect(() => {
+    setPageParams({ ...pageParams, page });
+  }, [page, pageParams, setPageParams]);
   return (
     <div>
       <h2>Now Playing</h2>

@@ -4,7 +4,7 @@ const ActorDetail = ({data}) => {
     
     return ( <div className ={ classes.moviesByActor}>
         { data.credits.cast.map((movie) => (
-            <SingleFilmCard  movie = { movie }/>
+            <SingleFilmCard  key= {movie.id} movie = { movie }/>
         )) }
     </div> );
 }

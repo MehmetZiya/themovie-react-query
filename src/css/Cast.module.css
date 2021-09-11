@@ -1,10 +1,19 @@
 .cast {
     display: flex;
-    
     justify-content: center;
     text-align: center;
-    
 }
 .cast a{
     text-decoration: none;
+    margin: 1rem;
+}
+
+.cast a:hover {
+    transform: scale(1.1)
+}
+.actorImg {
+    max-width: 10rem;
+}
+.actorImg img {
+    width: 100%;
 }

@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "react-query";
 import SingleFilmCard from "../components/SingleFilmCard";
 import PaginationButtons from "../components/PaginationButtons";
 import { fetchTopList } from "../functions/getItems";
+import { useUrlSearchParams } from "use-url-search-params";
 
 
 
 const TopList = () => {
-  const [page, setPage] = useState(1);
+  const [pageParams, setPageParams] = useUrlSearchParams(
+    { page: 1 },
+    { page: Number }
+  );
+  const [page, setPage] = useState(pageParams.page);
   const {
     isLoading,
     isError,
@@ -18,7 +23,9 @@ const TopList = () => {
   } = useQuery(["toplist", page], () => fetchTopList(page), {
     keepPreviousData: true,
   });
-  
+  useEffect(() => {
+    setPageParams({ ...pageParams, page });
+  }, [page, pageParams, setPageParams]);
   return (
     <div>
       <h2>Top Rated Movies</h2>
