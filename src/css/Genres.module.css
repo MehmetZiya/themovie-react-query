@@ -6,22 +6,23 @@
 }
 .genresHeader{
     text-align: center;
+    margin-top : 8rem;
+    
 }
 
 .genre {
     text-align: center;
     width: 12rem;
-    border: 2px solid #88dfdf;
+    border: 2px solid rgb(255, 241, 0);
     border-radius: 0.5rem;
     margin: 1rem;
     padding: 1rem;
-    color: #88dfdf;
-    background-color: #002020;
+    color: rgb(255, 241, 0);
+    background-color: #000000;
     cursor: pointer;
 }
 
 .genre:hover {
     text-decoration: underline;
-    color:#d47332;
-    border: 2px solid #d47332;
+    background-color: rgb(24, 24, 24);
 }

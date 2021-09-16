@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import classes from "../css/PaginationButtons.module.css";
 
 const PaginationButtons = ({ isPreviousData, page, setPage, data }) => {
@@ -6,14 +7,16 @@ const PaginationButtons = ({ isPreviousData, page, setPage, data }) => {
     <div className={classes.buttonComponent}>
       {data && (
         <Fragment>
+          
           <button
             className="btn"
             onClick={() => setPage((old) => Math.max(old - 1, 1))}
             disabled={page === 1}
           >
-            Previous Page
+            <ArrowLeftOutlined />
           </button>{" "}
           <p className={classes.pageNumber}>Page {page} on {data.total_pages}</p>
+          
           <button
             className="btn"
             onClick={() => {
@@ -23,7 +26,7 @@ const PaginationButtons = ({ isPreviousData, page, setPage, data }) => {
             }}
             disabled={isPreviousData || data.total_pages === page}
           >
-            Next Page
+            <ArrowRightOutlined/>
           </button>
         </Fragment>
       )}

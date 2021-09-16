@@ -6,16 +6,13 @@ import { fetchMoviesByGenre } from "../functions/getItems";
 import SingleFilmCard from "../components/SingleFilmCard";
 import PaginationButtons from "../components/PaginationButtons";
 
-
-
 const MoviesByGenre = () => {
-
   const params = useParams();
   const genreId = params.genreId;
   const genreName = params.genreName;
 
   const [pageParams, setPageParams] = useUrlSearchParams(
-    {  page: 1  },
+    { page: 1 },
     { page: Number }
   );
   const [page, setPage] = useState(pageParams.page);
@@ -25,10 +22,8 @@ const MoviesByGenre = () => {
   );
 
   useEffect(() => {
-    setPageParams({ ...pageParams, page  });
+    setPageParams({ ...pageParams, page });
   }, [page, pageParams, setPageParams]);
-
-  
 
   if (isLoading) {
     return <span>Loading Movies...</span>;
@@ -39,25 +34,29 @@ const MoviesByGenre = () => {
   }
   return (
     <div>
-      
+      {<h2>Discover {genreName} Movies...</h2>}
       <PaginationButtons
         isPreviousData={isPreviousData}
         data={data}
         page={page}
         setPage={setPage}
       />
-      
-      {
-          <h3>Discover {genreName} Movies...</h3>
-      } 
 
-      {data?.results && genreId &&(
+      
+
+      {data?.results && genreId && (
         <div className="movieCard-Box">
           {data.results.map((movie) => (
             <SingleFilmCard key={movie.id} movie={movie} />
           ))}
         </div>
       )}
+      <PaginationButtons
+        isPreviousData={isPreviousData}
+        data={data}
+        page={page}
+        setPage={setPage}
+      />
     </div>
   );
 };

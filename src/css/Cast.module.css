@@ -6,13 +6,14 @@
 .cast a{
     text-decoration: none;
     margin: 1rem;
+    color: rgb(255, 241, 0);
 }
 
 .cast a:hover {
     transform: scale(1.1)
 }
 .actorImg {
-    max-width: 10rem;
+    max-width: 8rem;
 }
 .actorImg img {
     width: 100%;

@@ -1,0 +1,24 @@
+.actorDetailPage {
+    margin-top: 8rem;
+}
+
+.actorDetail {
+    display: flex;
+}
+
+.profilImg {
+    width: 50%;
+    height: 80%;
+}
+.profilImg img {
+    max-width: 100%;
+    max-height: 80%;
+    margin-right: 1rem;
+}
+.actorInfo {
+    width: 40%;
+   display: flex;
+   margin-left: 1rem;
+   flex-direction: column;
+   justify-content: space-between;
+}
