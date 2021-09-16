@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "react-query";
 import SingleFilmCard from "../components/SingleFilmCard";
 import PaginationButtons from "../components/PaginationButtons";
@@ -11,7 +11,7 @@ const NowPlaying = () => {
     { page: Number }
   );
   const [page, setPage] = useState(pageParams.page);
-  
+
   const {
     isLoading,
     isError,
@@ -22,7 +22,7 @@ const NowPlaying = () => {
   } = useQuery(["now_playing", page], () => fetchNowPlaying(page), {
     keepPreviousData: true,
   });
-  
+
   useEffect(() => {
     setPageParams({ ...pageParams, page });
   }, [page, pageParams, setPageParams]);
@@ -31,9 +31,12 @@ const NowPlaying = () => {
       <h2>Now Playing</h2>
       {isLoading && <div>Loading data</div>}
       {isError && <div>{error.message}</div>}
-
-      <PaginationButtons isPreviousData={isPreviousData} data={data} page={page} setPage={setPage} />
-
+      <PaginationButtons
+        isPreviousData={isPreviousData}
+        data={data}
+        page={page}
+        setPage={setPage}
+      />
       {data && (
         <div className="movieCard-Box">
           {data.results.map((movie) => (
@@ -41,6 +44,12 @@ const NowPlaying = () => {
           ))}
         </div>
       )}
+      <PaginationButtons
+        isPreviousData={isPreviousData}
+        data={data}
+        page={page}
+        setPage={setPage}
+      />
       {isFetching ? <span> Loading...</span> : null}{" "}
     </div>
   );

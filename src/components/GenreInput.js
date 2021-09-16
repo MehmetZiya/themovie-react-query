@@ -1,12 +1,11 @@
 import { useQuery } from "react-query";
 import { fetchGenres } from "../functions/getItems";
 import classes from "../css/GenreInput.module.css";
-import { useRef } from "react";
+
 
 
 const GenreInput = ({ setGenreId, setGenreName }) => {
   const { data, error, isError } = useQuery(["genre"], () => fetchGenres());
-  const ref = useRef()
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
@@ -19,8 +18,9 @@ const GenreInput = ({ setGenreId, setGenreName }) => {
               setGenreName(e.target.selectedOptions[0].innerText);
               setGenreId(e.target.value);
           }}>
+              <option></option>
             {data.genres.map((genre) => (
-              <option key={genre.name} value={genre.id} name={genre.name} ref = {ref}>
+              <option key={genre.name} value={genre.id} name={genre.name}>
                 {genre.name}
               </option>
             ))}

@@ -17,7 +17,7 @@ export const fetchPopularFilms = async (page) => {
 
 export const fetchNowPlaying = async (page) => {
   const res = await fetch(`
-        ${baseURL}movie/now_playing?api_key=${api_key}&language=${lang}&page=${page}&region=${region}`);
+        ${baseURL}movie/now_playing?api_key=${api_key}&language=${lang}&page=${page}&region=SE`);
   return res.json();
 };
 

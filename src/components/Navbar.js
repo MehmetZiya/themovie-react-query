@@ -13,6 +13,11 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/genres" activeClassName={classes.active}>
+              Genres
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/popular" activeClassName={classes.active}>
               Popular Films
             </NavLink>

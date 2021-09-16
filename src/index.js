@@ -7,12 +7,12 @@ import "./index.css";
 import App from "./App";
 
 const queryClient = new QueryClient({
-  /* defaultOptions: {
+   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
       staleTime: 1000 * 100,
     },
-  }, */
+  }, 
 });
 
 ReactDOM.render(

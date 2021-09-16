@@ -1,0 +1,27 @@
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.genresHeader{
+    text-align: center;
+}
+
+.genre {
+    text-align: center;
+    width: 12rem;
+    border: 2px solid #88dfdf;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    color: #88dfdf;
+    background-color: #002020;
+    cursor: pointer;
+}
+
+.genre:hover {
+    text-decoration: underline;
+    color:#d47332;
+    border: 2px solid #d47332;
+}

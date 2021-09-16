@@ -44,6 +44,12 @@ const PopularFilms = () => {
           ))}
         </div>
       )}
+      <PaginationButtons
+        isPreviousData={isPreviousData}
+        data={data}
+        page={page}
+        setPage={setPage}
+      />
       {isFetching ? <span> Loading...</span> : null}{" "}
     </div>
   );

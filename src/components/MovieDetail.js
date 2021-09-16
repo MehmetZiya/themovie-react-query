@@ -26,10 +26,14 @@ const Details = ({ data }) => {
       </div>
       <div>
         <h3>{data.title}</h3>
+        <p>{data.overview}</p>
+        <p> Average Vote : {data.vote_average}</p>
+        <p> Run Time : {data.runtime} min.</p>
       </div>
+      <h3>Actors</h3>
       <div className ={classes.castWrapper}>
-        {cast.map((actor) => (
-          <Cast key={actor.id} actor={actor} />
+        {cast.map((actor, i) => (
+          <Cast key={i} actor={actor} />
         ))}
       </div>
       {cast && cast.length < data.credits.cast.length && (
