@@ -18,9 +18,12 @@
     margin: 0 0.5rem;
     text-align: center;
     overflow: hidden;
+    font-size: 0.9rem;
+}
+.movieInfo p {
+    color: rgb(105, 105, 105);
     font-size: small;
 }
-
 .movieInfo {
     max-width: 100%;
 }
