@@ -18,7 +18,7 @@ const Cast = ({ actor }) => {
             />
           </div>
         )}
-        {actor.name}
+        <div className ={classes.actorName}>{actor.name}</div>
       </Link>
     </div>
   );

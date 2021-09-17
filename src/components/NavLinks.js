@@ -4,12 +4,9 @@ import classes from "../css/Navbar.module.css";
 const NavLinks = ({handleLinkClick}) => {
   return (
     <Fragment>
+      
       <NavLink onClick={handleLinkClick} to="/home" className ={classes.navItem}activeClassName={classes.active} >
         Home
-      </NavLink>
-
-      <NavLink onClick={handleLinkClick} to="/genres" activeClassName={classes.active} className ={classes.navItem}>
-        Genres
       </NavLink>
 
       <NavLink onClick={handleLinkClick} to="/popular" activeClassName={classes.active} className ={classes.navItem}>
@@ -23,6 +20,11 @@ const NavLinks = ({handleLinkClick}) => {
       <NavLink onClick={handleLinkClick} to="/top_rated" activeClassName={classes.active} className ={classes.navItem}>
         Top Rated
       </NavLink>
+
+      <NavLink onClick={handleLinkClick} to="/genres" activeClassName={classes.active} className ={classes.navItem}>
+        Genres
+      </NavLink>
+
     </Fragment>
   );
 };

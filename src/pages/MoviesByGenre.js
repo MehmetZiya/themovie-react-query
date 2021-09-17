@@ -41,9 +41,6 @@ const MoviesByGenre = () => {
         page={page}
         setPage={setPage}
       />
-
-      
-
       {data?.results && genreId && (
         <div className="movieCard-Box">
           {data.results.map((movie) => (
