@@ -5,7 +5,6 @@ import Layout from "./components/Layout";
 import PopularFilms from "./pages/PopularFilms";
 import NowPlaying from "./pages/NowPlaying";
 import TopList from "./pages/TopList";
-import NotFound from "./pages/NotFound";
 import Genres  from "./pages/Genres";
 import MovieDetails from "./pages/MovieDetails";
 import ActorsDetails from "./pages/ActorsDetails";
@@ -39,9 +38,6 @@ function App() {
           </Route>
           <Route path="/actors/:actorId">
             <ActorsDetails />
-          </Route>
-          <Route path="*" exact>
-            <NotFound />
           </Route>
         </Switch>
       </Layout>
