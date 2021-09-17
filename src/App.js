@@ -1,5 +1,5 @@
 
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/Layout";
 import PopularFilms from "./pages/PopularFilms";
@@ -15,7 +15,10 @@ function App() {
     <div>
       <Layout>
         <Switch>
-          <Route exact path="/">
+        <Route exact path="/">
+            <Redirect to ="/home" />
+          </Route>
+          <Route exact path="/home">
             <HomePage />
           </Route>
           <Route exact path="/genres">

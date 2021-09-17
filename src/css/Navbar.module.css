@@ -38,7 +38,7 @@
   color:black;
   border-radius: 10px;
 }
-.navItem:active,
+
 .navItem.active {
     text-decoration:underline;
   }
