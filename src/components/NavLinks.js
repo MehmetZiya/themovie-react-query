@@ -5,10 +5,6 @@ const NavLinks = ({handleLinkClick}) => {
   return (
     <Fragment>
       
-      <NavLink onClick={handleLinkClick} to="/home" className ={classes.navItem}activeClassName={classes.active} >
-        Home
-      </NavLink>
-
       <NavLink onClick={handleLinkClick} to="/popular" activeClassName={classes.active} className ={classes.navItem}>
         Popular Films
       </NavLink>

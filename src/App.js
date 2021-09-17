@@ -17,9 +17,6 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route exact path="/home">
             <HomePage />
           </Route>
           <Route exact path="/genres">

@@ -40,7 +40,7 @@ const Navbar = () => {
       className={`${classes.navbar} ${showDropdown && classes.dropstatus}`}
       ref={navRef}
     >
-      {!showDropdown && <Link to="/home" className={classes.logo}>
+      {!showDropdown && <Link to="/" className={classes.logo}>
         <img src={logo} alt="movie-central" />
       </Link>}
       <nav className={classes.menu}>
