@@ -1,4 +1,4 @@
-import { Redirect } from "react-router";
+
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/Layout";
