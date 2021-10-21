@@ -2,7 +2,7 @@ const baseURL = "https://api.themoviedb.org/3/";
 const api_key = "b5cd38a2b87f343803775af240948692";
 const lang = "en-US";
 const region = "TR";
-const adult = false;
+
 
 export const fetchTopList = async (page) => {
   const res = await fetch(`
@@ -12,7 +12,7 @@ export const fetchTopList = async (page) => {
 
 export const fetchPopularFilms = async (page) => {
   const res = await fetch(`
-        ${baseURL}movie/popular?api_key=${api_key}&language=${lang}&page=${page}&region=${region}&adult=${adult}`);
+        ${baseURL}movie/popular?api_key=${api_key}&language=${lang}&page=${page}&region=${region}`);
   return res.json();
 };
 
@@ -43,7 +43,7 @@ export const fetchMoviesByActor = async (actorId) => {
 
 export const fetchMoviesByGenre = async (genreId, page) => {
   const res = await fetch(
-    `${baseURL}discover/movie?api_key=${api_key}&language=${lang}&with_genres=${genreId}&page=${page}&adult=${adult}`
+    `${baseURL}discover/movie?api_key=${api_key}&language=${lang}&with_genres=${genreId}&page=${page}`
   );
   return res.json();
 };

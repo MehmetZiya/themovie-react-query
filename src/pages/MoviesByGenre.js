@@ -43,7 +43,7 @@ const MoviesByGenre = () => {
       />
       {data?.results && genreId && (
         <div className="movieCard-Box">
-          {data.results.map((movie) => (
+          {data.results.filter((movies) => movies.adult === false).map((movie) => (
             <SingleFilmCard key={movie.id} movie={movie} />
           ))}
         </div>

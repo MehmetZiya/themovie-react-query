@@ -22,7 +22,7 @@ const ActorDetail = ({ data }) => {
   return (
     <Fragment>
       <div className={classes.moviesByActor}>
-        {actorMovies.map((movie) => (
+        {actorMovies.filter((movies) => movies.adult === false).map((movie) => (
           <SingleFilmCard key={movie.id} movie={movie} />
         ))}
       </div>
